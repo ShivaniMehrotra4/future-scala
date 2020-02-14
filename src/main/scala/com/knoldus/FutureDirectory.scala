@@ -22,13 +22,11 @@ object FutureDirectory extends App {
         Future {
           listDirectories(temporaryList.getPath)
         }
-      } else {
-        println(temporaryList.getPath)
-      }
+      } else println(temporaryList.getPath)
 
   }
 
-  val path = "/home/knoldus/Music"
+  val path = "/home/knoldus/future-scala/Folder1"
   listDirectories(path)
 
   //  l2 onComplete {
