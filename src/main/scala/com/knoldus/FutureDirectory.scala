@@ -18,15 +18,13 @@ object FutureDirectory extends App {
     val listOfFiles = path.listFiles
     //val l1 = List.empty[String]
     for (temporaryList <- listOfFiles)
-      if (temporaryList.isFile) {
-        println(temporaryList.getPath)
-        //        l1 +: temporaryList.getPath
-
-      }
-      else
+      if (!temporaryList.isFile) {
         Future {
           listDirectories(temporaryList.getPath)
         }
+      } else {
+        println(temporaryList.getPath)
+      }
 
   }
 
